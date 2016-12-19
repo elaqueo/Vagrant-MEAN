@@ -8,15 +8,15 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # box to build virtual evironment to build off of.
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "ubuntu/xenial64"
 
   # configurating the vm 
   config.vm.provider "virtualbox" do |v|
-    v.name = "node_hackathon_vm"
+    v.name = "MEAN Stack"
     # max 75% CPU cap
     v.customize ["modifyvm", :id, "--cpuexecutioncap", "75"]
     # 4GB ram
-    v.memory = 4094
+    v.memory = 512
   end
 
   # run "bootstrap.sh" shell script when setting up our machine
